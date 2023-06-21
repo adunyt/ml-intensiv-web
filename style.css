@@ -102,13 +102,18 @@ header {
 }
 
 .select-field select {
-  height: 32px;
-  width: 120px;
-  font-size: x-large;
+  border-image: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 240px;
+  font-size: large;
+  font-weight: lighter;
+  font-style: normal;
   border: 2px var(--primary-color-light) solid;
   border-radius: 35px;
   background: white;
-  border-image: none;
+  padding: 8px;
 }
 
 .content {
@@ -214,7 +219,6 @@ input {
 .snos {
   color: #aeb6cd;
   font-size: x-small;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   text-align: center;
 }
 
@@ -237,4 +241,8 @@ input {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+option{
+  font-weight: lighter;
 }
