@@ -14,13 +14,14 @@
     <div class="back">
         <header>
             <div class="yolo">
-                <a href="#"><img class="logo" src="img/smlt_logo_blue_ru.png"></a>
+                <a href="#">
+                    <img class="logo" src="img/smlt_logo_blue_ru.png">
+                </a>
                 <div class="stoi">
-
-                    <a href="#" class="stoy">
-                        <p class="ras">Расчитайте стоимость квартиры</p>
-                    </a>
+                        <p class="ras stoy">Расчитайте стоимость квартиры</p>
                 </div>
+            </div>
+            <div style="display: flex;">
                 <div class="geo">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
                         class="bi bi-geo-alt" viewBox="0 0 16 16">
@@ -28,14 +29,11 @@
                             d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z" />
                         <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
                     </svg>
-
                     <p class="bi">Москва</p>
-
-
                 </div>
+                <p class="contact-number">8-800-555-35-35</p>
             </div>
 
-            <p class="contact-number">8-800-555-35-35</p>
         </header>
     </div>
 
@@ -92,58 +90,62 @@
             <div class="content">
                 <div class="content-items">
                     <h2>Местоположение</h2>
-                    <form class="flat-form">
+                    <form id="location" class="flat-form" action="api/predict" method="get">
                         <div class="flat-form-field select-field">
                             <span class="mdi mdi-domain"></span>
-                            <select>
+                            <select name="city">
                                 <option value="Test">Улица Пушкина</option>
                             </select>
                         </div>
                         <div class="flat-form-field select-field">
                             <span class="mdi mdi-sign-real-estate"></span>
-                            <select>
+                            <select name="district">
                                 <option value="Test">Дом Колотушкина</option>
                             </select>
                         </div>
                     </form>
                 </div>
                 <div class="content-items">
-                    <h2>Площадь</h2>
-                    <form class="flat-form">
+                    <h2>Данные о квартире</h2>
+                    <form id="room_info" class="flat-form" action="api/predict" method="get">
                         <div class="flat-form-field num-field">
                             <span class="mdi mdi-sigma"></span>
-                            <input type="number" name="" id="" placeholder="общая, м²">
+                            <input type="number" name="total_meters" id="" placeholder="общая, м²">
                         </div>
                         <div class="flat-form-field num-field">
                             <span class="mdi mdi-sofa-single"></span>
-                            <input type="number" name="" id="" placeholder="жилая, м²">
+                            <input type="number" name="living_meters" id="" placeholder="жилая, м²">
                         </div>
                         <div class="flat-form-field num-field">
                             <span class="mdi mdi-faucet-variant"></span>
-                            <input type="number" name="" id="" placeholder="кухня, м²">
+                            <input type="number" name="kitchen_meters" id="" placeholder="кухня, м²">
                         </div>
                     </form>
                 </div>
                 <div class="content-items">
-                    <h2>Данные о квартиры</h2>
-                    <form class="flat-form">
+                    <h2>Данные о доме</h2>
+                    <form id="building_info" class="flat-form" action="api/predict" method="get">
                         <div class="flat-form-field num-field">
                             <span class="mdi mdi-elevator-passenger-outline"></span>
-                            <input type="number" name="" id="" placeholder="этажей всего">
+                            <input type="number" name="floors_count" id="" placeholder="этажей всего">
                         </div>
                         <div class="flat-form-field num-field">
                             <span class="mdi mdi-elevator-passenger"></span>
-                            <input type="number" name="" id="" placeholder="этаж">
+                            <input type="number" name="floor" id="" placeholder="этаж">
                         </div>
                         <div class="flat-form-field num-field">
                             <span class="mdi mdi-history"></span>
-                            <input type="" name="" id="" placeholder="год постройки">
+                            <input type="number" name="year_of_construction" id="" placeholder="год постройки">
                         </div>
 
                     </form>
                     <button class="continue-btn">
-                        <span>Расчитать</span>
-                        <span class="mdi mdi-counter"></span>
+                        <img
+                        src="img/samolet_logo_sign_blue.svg"
+                        alt="triangle with all three sides equal"
+                        height="170"
+                        width="170" />
+
                     </button>
                 </div>
             </div>
