@@ -18,7 +18,7 @@
                     <img class="logo" src="img/smlt_logo_blue_ru.png">
                 </a>
                 <div class="stoi">
-                    <p class="ras stoy">Расчитайте стоимость квартиры</p>
+                        <p class="ras stoy">Расчитайте стоимость квартиры</p>
                 </div>
             </div>
             <div style="display: flex;">
@@ -89,8 +89,8 @@
         <div class="right-panel">
             <div class="content">
                 <div class="content-items">
-                    <form id="form" class="flat-form" action="#" method="get">
-                        <h2>Местоположение</h2>
+                    <h2>Местоположение</h2>
+                    <form id="location" class="flat-form" action="api/predict" method="get">
                         <div class="flat-form-field select-field">
                             <span class="mdi mdi-domain"></span>
                             <select name="city">
@@ -103,47 +103,54 @@
                                 <option value="Test">Дом Колотушкина</option>
                             </select>
                         </div>
-                        <h2>Данные о квартире</h2>
+                    </form>
+                </div>
+                <div class="content-items">
+                    <h2>Данные о квартире</h2>
+                    <form id="room_info" class="flat-form" action="api/predict" method="get">
                         <div class="flat-form-field num-field">
                             <span class="mdi mdi-sigma"></span>
-                            <input required name="total_meters" id="" placeholder="общая, м²">
+                            <input type="number" name="total_meters" id="" placeholder="общая, м²">
                         </div>
                         <div class="flat-form-field num-field">
                             <span class="mdi mdi-sofa-single"></span>
-                            <input required type="number" name="living_meters" id="" placeholder="жилая, м²">
+                            <input type="number" name="living_meters" id="" placeholder="жилая, м²">
                         </div>
                         <div class="flat-form-field num-field">
                             <span class="mdi mdi-faucet-variant"></span>
-                            <input required type="number" name="kitchen_meters" id="" placeholder="кухня, м²">
+                            <input type="number" name="kitchen_meters" id="" placeholder="кухня, м²">
                         </div>
                         <div class="flat-form-field num-field">
                             <span class="mdi mdi-counter"></span>
-                            <input required step="1" type="number" name="rooms_count" id="" placeholder="Количество комнат">
+                            <input type="number" name="kitchen_meters" id="" placeholder="Количество комнат">
                         </div>
-                        <h2>Данные о доме</h2>
+                    </form>
+                </div>
+                <div class="content-items">
+                    <h2>Данные о доме</h2>
+                    <form id="" class="flat-form" action="api/predict" method="get">
                         <div class="flat-form-field num-field">
                             <span class="mdi mdi-elevator-passenger-outline"></span>
-                            <input required step="1" type="number" name="floors_count" id="" placeholder="этажей всего">
+                            <input type="number" name="floors_count" id="" placeholder="этажей всего">
                         </div>
                         <div class="flat-form-field num-field">
                             <span class="mdi mdi-elevator-passenger"></span>
-                            <input required step="1" type="number" name="floor" id="" placeholder="этаж">
+                            <input type="number" name="floor" id="" placeholder="этаж">
                         </div>
                         <div class="flat-form-field num-field">
                             <span class="mdi mdi-history"></span>
-                            <input required type="number" min="1900" max="2099" step="1" name="year_of_construction" id="" placeholder="год постройки">
+                            <input type="number" name="year_of_construction" id="" placeholder="год постройки">
                         </div>
-                        <button class="continue-btn">
-                            <img src="img/samolet_logo_sign_blue.svg" alt="triangle with all three sides equal"
-                                height="170" width="170" />
 
-                        </button>
                     </form>
-                    <div class="price">
-                        <h2>
-                            Цена
-                        </h2>
-                    </div>
+                    <button class="continue-btn">
+                        <img
+                        src="img/samolet_logo_sign_blue.svg"
+                        alt="triangle with all three sides equal"
+                        height="170"
+                        width="170" />
+
+                    </button>
                 </div>
             </div>
 
@@ -153,7 +160,7 @@
             </div>
         </div>
     </div>
-    <script src="js/js.js"></script>
+    <script></script>
 </body>
 
 

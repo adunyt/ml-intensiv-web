@@ -253,3 +253,9 @@ input {
 option{
   font-weight: lighter;
 }
+
+
+.price {
+  display: flex ;
+
+}

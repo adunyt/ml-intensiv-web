@@ -1,5 +1,26 @@
-var location_form = document.querySelector("#location")
-var room_form = document.querySelector("#room_info")
-var building_form = document.querySelector("#building_info")
+var form = document.querySelector("#form")
 
-location_form.
+form.addEventListener("submit", function(e) {
+    e.preventDefault();
+    const XHR = new XMLHttpRequest();
+    const data = new FormData(form);
+    for (const [name, value] of Object.entries(data)) {
+        FD.append(name, value);
+      }
+    
+      // Define what happens on successful data submission
+      XHR.addEventListener("load", (event) => {
+        alert("Данные отправлены!.");
+      });
+    
+      // Define what happens in case of an error
+      XHR.addEventListener("error", (event) => {
+        alert("Упс! Что-то пошло не так.");
+      });
+    
+      // Set up our request
+      XHR.open("POST", "https://example.com/cors.php");
+    
+      // Send our FormData object; HTTP headers are set automatically
+      XHR.send(FD);
+  })
