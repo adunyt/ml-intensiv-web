@@ -19,7 +19,7 @@ form.addEventListener("submit", function(e) {
       });
     
       // Set up our request
-      XHR.open("POST", "https://example.com/cors.php");
+      XHR.open("GET", "/");
     
       // Send our FormData object; HTTP headers are set automatically
       XHR.send(FD);
