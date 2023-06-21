@@ -1,0 +1,216 @@
+@import url('https://fonts.cdnfonts.com/css/cofo-sans');
+@import url("https://cdn.jsdelivr.net/npm/@mdi/font@7.2.96/css/materialdesignicons.min.css");
+
+:root {
+  font-family: 'CoFo Sans', sans-serif;
+  --background-color: #FFFFFF;
+  --primary-color: #007BFC;
+  --primary-color-light: #1888FC;
+  --secondary-color: #DDDDDD;
+  --background-color: #f4f6fb;
+}
+
+body {
+  margin: 0;
+
+}
+.logo {
+  width: 150px;
+  height: 20px;
+  margin-top: 25px;
+  display: block;
+  
+}
+
+header {
+  margin: 0px 300px;
+  display: flex;
+  justify-content: space-between;
+  align-self: center;
+
+
+}
+.back {
+  padding: 15px;
+  background-color: #f4f6fb;
+
+}
+.stoy {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  display: block;
+}
+
+.stoi {
+  background: rgb(81,91,115);
+  background: linear-gradient(90deg, rgba(81,91,115,0.56) 35%, rgba(81,91,115,0.56) 100%);
+  box-sizing: border-box;
+  border-radius: 25px; 
+  height: 45px;
+  width: 500px;
+  text-align: center;
+  margin: 10px 25px 0px 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ras {
+  font-size: 20px;
+  color: rgb(255, 255, 255);
+  margin: 0;
+}
+
+.content-items .mdi {
+  color: var(--primary-color);
+  font-size: larger;
+}
+
+.geo {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: var(--primary-color);
+  width: 100px;
+}
+
+.content-items{
+  padding: 10px;
+  margin: 0 75px;
+}
+
+.contact-number {
+  text-align: left;
+  display: flex;
+}
+
+.content-items h2{
+  font-size: 32px;
+  font-weight: lighter;
+  color: #FFFFFF;
+}
+
+.flat-form-field{
+  margin: 15px 0;
+  display: flex;
+  align-items: center;
+}
+
+.flat-form-field .mdi{
+  margin-right: 10px;
+  color: #FFFFFF;
+}
+
+.select-field select{
+  height: 32px;
+  width: 120px; 
+  font-size: x-large;
+}
+
+.content{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #007BFC;
+  width: 700px;
+  border-radius: 35px;
+  margin: 40px;
+}
+
+.continue-btn{
+  position: absolute;
+  width: 160px;
+  height: 42px;
+  border: none;
+  border-radius: 50px;
+  background-color: var(--primary-color-light);
+  color: white;
+  right: 50px;
+  bottom: 50px;
+}
+
+.continue-btn{
+  font-size: large;
+}
+
+input {
+  font-size: x-large;
+}
+
+.yolo {
+  display: flex;
+
+}
+
+.plashki {
+  background-color: #ededed;
+  width: 300px;
+  height: 310px;
+  border-radius: 35px;
+  display: block;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+.plashki .bi{
+  color: var(--primary-color)
+}
+
+.podplas {
+  color: #9198AB;
+  font-size: x-large;
+
+}
+
+.plaska-sinia {
+  background-color: #007BFC;
+  width: 700px;
+  height: 310px;
+  border-radius: 35px;
+  padding: 40px;
+  display: block;
+  color: white;
+  box-sizing: border-box;
+}
+
+.all-plashki{
+  display: flex;
+  width: 700px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.all-plashki .plashki{
+  margin: 20px;
+}
+
+.all-plashki .plaska-sinia{
+  margin: 20px;
+}
+
+.all-plashki .plaska-sinia .podplas{
+  color: #DDDDDD;
+}
+
+.left-panel{
+  width: 700px;
+  padding: 20px;
+}
+
+.left-text{
+  margin: 20px;
+}
+
+.all_content{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.snos {
+  color: #aeb6cd;
+  font-size: x-small;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+}
+
+
