@@ -6,6 +6,8 @@ import json
 app = Flask(__name__)
 model = Model("house_predict.cbm")
 translated_dict = {}
+translated_citys = {}
+translated_districts = {}
 translator = GoogleTranslator(source="en", target="ru")
 CITY_JSON = "city.json"
 DISTRICT_JSON = "district.json"
@@ -20,8 +22,10 @@ def load_districts():
 
 @app.route("/api/predict", methods=['GET', 'POST'])
 def predict():
+    print(translated_citys)
+    print(translated_districts)
     value = model.predict(
-        request.form["city"],
+        translated_citys[request.form["city"].lower()],
         request.form["floor"],
         request.form["floors_count"],
         request.form["rooms_count"],
@@ -29,32 +33,34 @@ def predict():
         request.form["year_of_construction"],
         request.form["living_meters"],
         request.form["kitchen_meters"], 
-        request.form["district"])
+        translated_districts[request.form["district"].lower()])
     return {"price_per_m2": value}
+
+def load_locations():
+    global translated_citys, translated_districts
+    translated_citys = json.load(open("translated_citys.json", "r"))
+    translated_districts = json.load(open("translated_districts.json", "r"))
 
 def save_locations():
     citys = load_citys()
-    translated_citys = []
     for city in citys:
         translated = translator.translate(city)
-        translated_citys.append(translated)
+        translated_citys[translated.lower()] = city
         print(f"city: {city} translated: {translated}")
-    translated_citys.sort()
     districts = load_districts()
-    translated_districts = []
     for district in districts:
         translated = translator.translate(district)
-        translated_districts.append(translated)
+        translated_districts[translated.lower()] = district
         print(f"district: {district} translated: {translated}")
-    translated_districts.sort()
-    translated_dict["citys"] = citys
-    translated_dict["districts"] = districts
-    json.dump(translated_dict, open("translated.json", "w"))
+    json.dump(translated_citys, open("translated_citys.json", "w"))
+    json.dump(translated_districts, open("translated_districts.json", "w"))
 
 @app.route("/api/locations")
 def return_locations():
-    translated = json.load(open("translated.json", "r"))
-    return translated
+    all_dict = {}
+    all_dict["citys"] = list(translated_citys.keys())
+    all_dict["district"] = list(translated_districts.keys())
+    return all_dict
 
 @app.route("/")
 def main():
@@ -65,4 +71,5 @@ def dev():
     return render_template("index-dev.html")
 
 # save_locations()
+load_locations()
 app.run(debug=True)
