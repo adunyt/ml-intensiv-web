@@ -1,5 +1,9 @@
 @import url('https://fonts.cdnfonts.com/css/cofo-sans');
 @import url("https://cdn.jsdelivr.net/npm/@mdi/font@7.2.96/css/materialdesignicons.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@600&display=swap');
+
+
+
 
 :root {
   font-family: 'CoFo Sans', sans-serif;
@@ -60,8 +64,11 @@ header {
 
 .logo {
   width: 150px;
-  height: 20px;
   display: block;
+  margin: 0;
+  text-align: center;
+  font-family: 'Comfortaa', cursive;
+  text-decoration: none;
 }
 
 .back {
@@ -115,6 +122,12 @@ header {
 .content-items .mdi {
   color: var(--primary-color);
   font-size: xx-large;
+}
+
+.mdi-chevron-right{
+  font-size: 130px !important;
+  color: white !important;
+  text-align: center !important;
 }
 
 .content-items h2 {
