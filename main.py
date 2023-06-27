@@ -7,6 +7,7 @@ model = Model("house_predict.cbm")
 translated_citys = {}
 translated_districts = {}
 
+
 @app.route("/api/predict", methods=['GET', 'POST'])
 def predict():
     value = model.predict(
@@ -32,14 +33,10 @@ def return_locations():
 def main():
     return render_template('index.html')
 
-@app.route("/dev")
-def dev():
-    return render_template("index-dev.html")
 
 if not is_location_cached():
     app.logger.warning("No cached locations! Saving...")
     cache_locations()
-
 translated_citys = get_citys()
 translated_districts = get_districts()
 
