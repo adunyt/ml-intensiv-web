@@ -6,7 +6,7 @@ var city = document.querySelector("#select-city");
 var district = document.querySelector("#select-district");
 
 var login_form = document.querySelector("#login-form");
-var all_content = document.querySelector(".all_content")
+var all_content = document.querySelector(".all-content")
 var login_form_from = login_form.querySelector("#login_form_from");
 
 var formData;
