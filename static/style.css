@@ -179,18 +179,18 @@ header {
 }
 
 
-.right-panel {
+.right-content {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.price {
+.total-prices {
   margin-top: 65px;
   display: block;
 }
 
-.price-1 {
+.price-value {
   color: #FFFFFF;
   display: block;
   margin-top: 10px;
@@ -248,7 +248,7 @@ header {
 
 /* === Below form ===  */
 
-.snos {
+.footnote {
   color: #aeb6cd;
   font-size: x-small;
   text-align: center;
@@ -256,7 +256,7 @@ header {
 
 }
 
-.snoska {
+.footnote-text {
   display: block;
   width: 500px;
 }
@@ -264,7 +264,7 @@ header {
 /* ============= PLASHKI ============== */
 
 
-.plashki {
+.panel {
   background-color: #ededed;
   width: 300px;
   height: 310px;
@@ -274,53 +274,53 @@ header {
   box-sizing: border-box;
 }
 
-.plashki .bi {
+.panel .bi {
   color: var(--primary-color)
 }
 
-.podplas {
+.panel-desc {
   color: #9198AB;
   font-size: x-large;
 
 }
 
-.wide-plaska {
+.wide-panel {
   background-color: var(--primary-color) !important;
   width: 700px !important;
 }
 
-.wide-plaska .plas {
+.wide-panel .panel-header {
   color: white;
 }
 
-.wide-plaska .podplas {
+.wide-panel .panel-desc {
   color: whitesmoke;
 }
 
-.wide-plaska .bi {
+.wide-panel .bi {
   color: white;
 }
 
-.all-plashki {
+.all-panels {
   display: flex;
   width: 700px;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 
-.all-plashki .plashki {
+.all-panels .panel {
   margin: 20px;
 }
 
-.all-plashki .plaska-sinia {
+.all-panels .panel-headerka-sinia {
   margin: 20px;
 }
 
-.all-plashki .plaska-sinia .podplas {
+.all-panels .panel-headerka-sinia .panel-desc {
   color: var(--secondary-color);
 }
 
-.left-panel {
+.left-content {
   width: 700px;
   padding: 20px;
 }
@@ -331,7 +331,7 @@ header {
 
 /* ========= GENERAL ======== */
 
-.all_content {
+.all-content {
   display: flex;
   justify-content: center;
   width: 90%;
@@ -423,31 +423,31 @@ header {
     font-size: x-large;
   }
 
-  .left-panel {
+  .left-content {
     width: 500px;
   }
 
-  .all-plashki {
+  .all-panels {
     width: 500px;
   }
 
-  .plashki {
+  .panel {
     width: 210px;
     height: auto;
     padding: 30px;
   }
 
-  .podplas {
+  .panel-desc {
     font-size: large;
     margin: 0;
   }
 
-  .plas {
+  .panel-header {
     margin: 0;
     margin-bottom: 10px;
   }
 
-  .plashki .bi {
+  .panel .bi {
     width: 32px;
     height: 32px;
     margin-bottom: 10px;
