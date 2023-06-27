@@ -1,29 +1,14 @@
 from flask import Flask, render_template, request
 from model import Model
-from deep_translator import GoogleTranslator
-import json
+from location_manager import cache_locations, is_location_cached, get_districts, get_citys
 
 app = Flask(__name__)
 model = Model("house_predict.cbm")
-translated_dict = {}
 translated_citys = {}
 translated_districts = {}
-translator = GoogleTranslator(source="en", target="ru")
-CITY_JSON = "city.json"
-DISTRICT_JSON = "district.json"
-
-def load_citys():
-    citys = json.load(open(CITY_JSON))
-    return list(citys.keys())
-
-def load_districts():
-    district = json.load(open(DISTRICT_JSON))
-    return list(district.keys())
 
 @app.route("/api/predict", methods=['GET', 'POST'])
 def predict():
-    print(translated_citys)
-    print(translated_districts)
     value = model.predict(
         translated_citys[request.form["city"].lower()],
         request.form["floor"],
@@ -35,25 +20,6 @@ def predict():
         request.form["kitchen_meters"], 
         translated_districts[request.form["district"].lower()])
     return {"price_per_m2": value}
-
-def load_locations():
-    global translated_citys, translated_districts
-    translated_citys = json.load(open("translated_citys.json", "r"))
-    translated_districts = json.load(open("translated_districts.json", "r"))
-
-def save_locations():
-    citys = load_citys()
-    for city in citys:
-        translated = translator.translate(city)
-        translated_citys[translated.lower()] = city
-        print(f"city: {city} translated: {translated}")
-    districts = load_districts()
-    for district in districts:
-        translated = translator.translate(district)
-        translated_districts[translated.lower()] = district
-        print(f"district: {district} translated: {translated}")
-    json.dump(translated_citys, open("translated_citys.json", "w"))
-    json.dump(translated_districts, open("translated_districts.json", "w"))
 
 @app.route("/api/locations")
 def return_locations():
@@ -70,7 +36,12 @@ def main():
 def dev():
     return render_template("index-dev.html")
 
-# save_locations()
-load_locations()
+if not is_location_cached():
+    app.logger.warning("No cached locations! Saving...")
+    cache_locations()
+
+translated_citys = get_citys()
+translated_districts = get_districts()
+
 if __name__ == "__main__":
     app.run(debug=True)
